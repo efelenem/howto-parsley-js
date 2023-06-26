@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parsley JS</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/jquery/jquery-v360.min.js"></script>
+	<script src="js/jquery/jquery-ui.min.js"></script>
+	<script src="js/parsley/parsley.config.js"></script>
+	<script src="js/parsley/parsley.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<form action="POST" id="userInfoForm" class="form-container">
+			<h2 class="form-title">ParsleyJs Form Validation</h2>
+			<div class="input-container">
+				<label for="info-name">Full name</label>
+				<input type="text" name="full_name" id="info-name" placeholder="John Middle Doe"
+					class="form-req input-name"
+				>
+			</div>
+			<div class="input-container">
+				<label for="info-email">Email</label>
+				<input type="email" name="email" id="info-email" placeholder="johndoe@email.com"
+					class="form-req input-email"
+				>
+			</div>
+			<div class="input-container">
+				<label for="info-bday">Birthdate</label>
+				<input type="text" name="birthdate" id="info-bday"
+					class="form-req input-bday input-datepicker"
+					placeholder="MM/DD/YYYY" readonly
+				>
+			</div>
+			<div class="input-container w-half">
+				<label for="info-mobile-no">Mobile no.</label>
+				<div class="mobile-container bg-white">
+					<div class="text-lg"><span>+639</span></div>
+					<input type="text" name="mobile_no" id="info-mobile-no" placeholder="101234567"
+						maxlength="9" class="form-req input-mobile-no text-lg"
+						data-parsley-mobile="9" data-parsley-class-handler=".mobile-container"
+						data-parsley-errors-container="#mobile-container-errors"
+					>
+				</div>
+				<div id="mobile-container-errors"></div>
+			</div>
+			<div class="input-container">
+				<label for="info-address">Home Address</label>
+				<input type="text" name="address" id="info-address" placeholder="Room 51, Bldg. A, Watashiba, Tokyo, Japan"
+					class="form-req input-address"
+				>
+			</div>
+			<div class="input-container">
+				<label for="info-test">Test Field</label>
+				<input type="text" name="test_fake" id="info-testf" placeholder="This is a test unrequired field"
+					class="input-test"
+				>
+				<input type="text" name="test_real" id="info-testr" class="form-req hidden"
+					data-parsley-class-handler=".input-test"
+				>
+			</div>
+			<div class="input-container hidden hiddenf-container">
+				<label for="info-test">Hidden Field</label>
+				<input type="text" name="hidden_field" id="hidden-field"
+					placeholder="This is a field is required if test field is not empty"
+					class="input-hiddenf"
+				>
+			</div>
+			<div class="btn-container">
+				<button class="btn-main" id="btn-submit-info" style="display: none;">Submit</button>
+				<button class="btn-disabled" id="btn-submit-invalid">Submit</button>
+			</div>
+		</form>
+	</div>
+	<script src="js/app.js"></script>
+</body>
+</html>
